@@ -1,0 +1,9 @@
+# IDE
+.idea
+
+# NodeJs
+node_modules
+
+# Serverless
+.serverless
+.esbuild
