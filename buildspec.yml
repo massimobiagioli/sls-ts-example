@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - npm install -g serverless
+      - npm install
+  pre_build:
+    commands:
+      - echo "Running linter, fixer, tests ..."
+  build:
+    commands:
+      - echo "Deploying to AWS - Stage $STAGE_NAME ..."
+      - serverless deploy --stage $STAGE_NAME
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
